@@ -1,0 +1,23 @@
+@import '~antd/dist/antd.css';
+
+#landingcontainer {
+    width: 100%;
+    margin: 0;
+}
+
+#bannertitle {
+    position: absolute;
+    max-width: 500px;
+    bottom: 2rem;
+    margin-left: 2rem;
+}
+
+#moviesbody {
+    width: 85%;
+    margin: 1rem auto;
+}
+
+#loadmore {
+    display: flex;
+    justify-content: center;
+}
