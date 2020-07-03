@@ -5,6 +5,7 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { Form, Icon, Input, Button, Checkbox, Typography } from 'antd';
 import { useDispatch } from "react-redux";
+import './LoginPage.css'
 
 const { Title } = Typography;
 
@@ -81,7 +82,7 @@ function LoginPage(props) {
         return (
           <div className="app">
 
-            <Title level={2}>Log In</Title>
+            <Title level={2} style={{color: 'white'}}>Log In</Title>
             <form onSubmit={handleSubmit} style={{ width: '350px' }}>
 
               <Form.Item required>
@@ -125,16 +126,16 @@ function LoginPage(props) {
               )}
 
               <Form.Item>
-                <Checkbox id="rememberMe" onChange={handleRememberMe} checked={rememberMe} >Remember me</Checkbox>
-                <a className="login-form-forgot" href="/reset_user" style={{ float: 'right' }}>
+                <Checkbox id="rememberMe" onChange={handleRememberMe} checked={rememberMe} style={{color: "white"}} >Remember me</Checkbox>
+                <a className="login-form-forgot" href="/reset_user" style={{ float: 'right', color: '#d4b106'  }}>
                   forgot password
                   </a>
                 <div>
-                  <Button type="primary" htmlType="submit" className="login-form-button" style={{ minWidth: '100%' }} disabled={isSubmitting} onSubmit={handleSubmit}>
+                  <Button type="primary" htmlType="submit" className="login-form-button" style={{ minWidth: '100%' }} disabled={isSubmitting} onSubmit={handleSubmit} >
                     Log in
                 </Button>
                 </div>
-                Or <a href="/register">register now!</a>
+                <span style={{color: 'white'}}>Or</span> <a href="/register" style={{color: '#d4b106'}}>register now!</a>
               </Form.Item>
             </form>
           </div>

@@ -32,8 +32,8 @@ function LandingPage() {
         <div id="landingcontainer">
 
             {/*HEADER*/}
-             {Movies[3] &&
-                <MainImage image={`${IMAGE_URL}w1280${Movies[3].backdrop_path && Movies[3].backdrop_path}`} title={Movies[3].original_title} description={Movies[3].overview} />
+             {Movies[9] &&
+                <MainImage image={`${IMAGE_URL}w1280${Movies[9].backdrop_path && Movies[9].backdrop_path}`} title={Movies[9].original_title} description={Movies[9].overview} />
             } 
             {/*Needed to do the above so that we can get the value of movies[0] first. Not doing so will show an undefined error because the speed
             of getting the value is much slower than the rendering of the JSX elements, thus, we do this so that it can get the value. */}
@@ -42,7 +42,7 @@ function LandingPage() {
 
             {/*BODY*/}
             <div id="moviesbody">
-                <Title level={2}>Movies by latest</Title>
+                <Title style={{color: "rgb(245, 197, 24)", fontFamily: "Roboto, Helvetica, Arial"}}level={2}>Movies by latest</Title>
                 <hr />
 
                 {/*Grid Cards. Using antd again.*/}

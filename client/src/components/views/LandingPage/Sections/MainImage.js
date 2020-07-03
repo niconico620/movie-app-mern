@@ -23,8 +23,8 @@ function MainImage(props) {
             <div>
                 <div id="bannertitle" >
                     {/*<Title> is taken from antd {Typography} */}
-                    <Title style={{ color: 'white' }} level={2}>{props.title}</Title>
-                    <p style={{ color: 'white', fontSize: '1rem' }}>{props.description}</p>
+                    <Title style={{ color: 'white', fontFamily: "Roboto, Helvetica, Arial" }} level={2}>{props.title}</Title>
+                    <p style={{ color: 'white', fontSize: '1.05rem', fontFamily: "Roboto, Helvetica, Arial"}}>{props.description}</p>
                 </div>
 
             </div>

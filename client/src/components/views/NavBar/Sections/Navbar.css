@@ -2,11 +2,12 @@
 
 .menu {
   padding: 0 20px;
-  border-bottom: solid 1px #e8e8e8;
+  border-bottom: solid 1px #1c1c1c;
   overflow: auto;
-  box-shadow: 0 0 30px #f3f1f1;
-  background-color: white;
+  box-shadow: 0 0 30px 	#1c1c1c;
+  background-color: black;
 }
+
 
 .menu__logo {
   width: 150px;
@@ -19,17 +20,29 @@
   padding: 19px 20px;
 }
 
+
 .menu__container .ant-menu-item {
   padding: 0px 5px;
+  background-color: black;
+  color: white;
 }
+
 
 .menu__container .ant-menu-submenu-title {
   padding: 10px 20px;
+  background-color: black;
+  color: white;
+}
+
+.menu__container .ant-menu-submenu-title:hover {
+  padding: 10px 20px;
+  color: white;
 }
 
 .menu__container .ant-menu-item a,
 .menu__container .ant-menu-submenu-title a {
   padding: 10px 15px;
+  color: white;
 }
 
 .menu__container .ant-menu-horizontal {
@@ -50,7 +63,8 @@
   padding: 6px;
   margin-top: 8px;
   display: none !important; /* use of important to overwrite ant-btn */
-  background: #3e91f7;
+  background: rgb(245, 197, 24);
+  border-color: rgb(245, 197, 24);  
 }
 
 .menu_drawer .ant-drawer-body {
@@ -60,12 +74,44 @@
 /* align header of Drawer with header of page */
 .menu_drawer .ant-drawer-header {
   padding: 14px 24px !important;
+  background-color: #1c1c1c;
+  border-color: black;
 }
+
+.ant-drawer-title {
+  color: #fff;
+  }
+.ant-drawer-wrapper-body {
+  background-color: #1c1c1c;
+  color: #fff;
+}
+
+.ant-menu-inline {
+  background-color: #1c1c1c;
+  color: white;
+  border-color: #1c1c1c;
+
+}
+
+.ant-menu-inline div {
+  color: white;
+}
+
+.ant-menu-inline li {
+  background-color: #1c1c1c;
+  border-radius: 0;
+  border-color: #1c1c1c;
+}
+.ant-menu-inline a {
+color: white;
+}
+
 
 @media (max-width: 767px) {
   .menu__mobile-button {
     display: inline-block !important;
   }
+  
 
   .menu_left,
   .menu_rigth {

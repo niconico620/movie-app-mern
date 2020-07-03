@@ -1,0 +1,9 @@
+.app{
+    background-color: #000000;
+    background-image: linear-gradient(147deg, #000000 0%, #434343 74%);
+}
+
+.ant-btn-primary {
+    background-color: #d4b106;
+    border-color: #d4b106;
+}
