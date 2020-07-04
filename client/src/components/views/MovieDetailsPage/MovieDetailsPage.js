@@ -5,15 +5,17 @@ import MainImage from '../LandingPage/Sections/MainImage';
 import { Descriptions, Button, Row } from 'antd';
 import './MovieDetailsPage.css';
 import GridCard from '../LandingPage/Sections/GridCard';
+import Favorites from './Sections/Favorite';
 
 function MovieDetailsPage(props) {
 
+    const movieId = props.match.params.movieId
     const [Movie, setMovie] = useState([]);
     const [Crews, setCrews] = useState([]);
     const [ActorToggle, setActorToggle] = useState(false);
 
     useEffect(() => {
-        const movieId = props.match.params.movieId
+        
 
         axios.get(`${API_URL}movie/${movieId}?api_key=${API_KEY}&language=en-US`)
             .then(response => response.data)
@@ -38,16 +40,19 @@ function MovieDetailsPage(props) {
         setActorToggle(!ActorToggle);
     }
 
+
     return (
         <div style={{ width: '100%', margin: 0 }}>
             {Movie &&
                 <MainImage image={`${IMAGE_URL}w1280${Movie.backdrop_path && Movie.backdrop_path}`} title={Movie.original_title} description={Movie.overview} />
             }
 
+            {/*Favorites Button */}
+
             <br />
             <div style={{ width: '85%', margin: '1rem auto' }}>
                 <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                    <Button type="primary">Add to Favorites</Button>
+                    <Favorites userFrom={localStorage.getItem('userId')} movieId={movieId} movieInfo={Movie} />
                 </div>
 
             </div>
@@ -72,6 +77,7 @@ function MovieDetailsPage(props) {
             <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <Button type="primary" onClick={toggleActors}>View Actors</Button>
             </div>
+            <br />
 
             {/*Grid Card for Crew */}
             {ActorToggle &&
