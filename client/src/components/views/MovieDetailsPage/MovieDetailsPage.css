@@ -1,0 +1,7 @@
+@import '~antd/dist/antd.css';
+
+.ant-descriptions-bordered .ant-descriptions-item-label {
+    background-color: #d4b106;
+    color: white;
+    font-weight: bold;
+}
