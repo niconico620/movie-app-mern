@@ -1,5 +1,7 @@
 Hello!
 
+The deployed version of the app can be accessed here: https://radiant-fjord-15344.herokuapp.com/
+
 To use this application,
 
 - make dev.js file inside the config folder
