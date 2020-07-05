@@ -59,7 +59,7 @@ function Favorite(props) {
                     console.log("yeehaw1 aaa" + response.data.FavoriteNumber);
                     setFavoriteNumber(response.data.FavoriteNumber);
                 } else {
-                    alert('Failed to get the number of favorites. Please log in first.');
+                    console.log('Failed to get the number of favorites. Please log in first.');
                 }
             })
 
@@ -69,7 +69,8 @@ function Favorite(props) {
                     console.log("yeehaw2");
                     setFavorited(response.data.favorited);
                 } else {
-                    alert("Failed to get information of favorites. Please log in first.");
+                    
+                    console.log("Failed to get information of favorites. Please log in first.");
                 }
             })
 
