@@ -7,6 +7,7 @@ import './MovieDetailsPage.css';
 import GridCard from '../LandingPage/Sections/GridCard';
 import Favorites from './Sections/Favorite';
 import Comments from './Sections/Comments';
+import LikeDislikes from './Sections/LikeDislikes';
 
 function MovieDetailsPage(props) {
 
@@ -20,7 +21,7 @@ function MovieDetailsPage(props) {
     }
 
     useEffect(() => {
-        
+
 
         axios.get(`${API_URL}movie/${movieId}?api_key=${API_KEY}&language=en-US`)
             .then(response => response.data)
@@ -40,7 +41,7 @@ function MovieDetailsPage(props) {
                 console.log(error);
             })
 
-            axios.post('/api/comment/getComments', movieVariable)
+        axios.post('/api/comment/getComments', movieVariable)
             .then(response => {
                 console.log(response)
                 if (response.data.success) {
@@ -113,6 +114,10 @@ function MovieDetailsPage(props) {
 
                 </Row>
             }
+
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <LikeDislikes video videoId={movieId} userId={localStorage.getItem('userId')} />
+            </div>
 
 
             {/*Comments*/}

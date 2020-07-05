@@ -4,7 +4,7 @@ To use this application,
 
 - make dev.js file inside the config folder
 
-- put mongoDB info into the newly created dev.js file
+- put mongoDB info into the newly created dev.js file. 
 
 - Type " npm install " inside the root directory (To download server/back-end dependencies)
 

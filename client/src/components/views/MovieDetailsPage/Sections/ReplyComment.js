@@ -44,7 +44,7 @@ function ReplyComment(props) {
     return (
         <div>
             {ChildCommentNumber > 0 &&
-                <a style={{ fontSize: '14px', margin: '10px', marginTop: '5px', color: 'gray' }}
+                <a style={{ fontSize: '14px', margin: '10px', marginTop: '5px', color: 'rgb(160, 132, 29)' }}
                     onClick={handleChange} >
                     {!OpenReplyComments ? `View ${ChildCommentNumber} more reply/replies` : `Hide ${ChildCommentNumber} reply/replies`}
                 </a>
