@@ -64,7 +64,7 @@ function MovieDetailsPage(props) {
     return (
         <div style={{ width: '100%', margin: 0 }}>
             {Movie &&
-                <MainImage image={`${IMAGE_URL}w1280${Movie.backdrop_path && Movie.backdrop_path}`} title={Movie.original_title} description={Movie.overview} />
+                <MainImage image={`${IMAGE_URL}w1280${Movie.backdrop_path && Movie.backdrop_path}`} title={Movie.original_title} description={Movie.overview} movieId={movieId} />
             }
 
             {/*Favorites Button */}
