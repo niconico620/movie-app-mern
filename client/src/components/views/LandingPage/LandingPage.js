@@ -46,7 +46,7 @@ function LandingPage() {
 
             {/*HEADER*/}
             {Movies[19] &&
-                <MainImage image={`${IMAGE_URL}w1280${Movies[19].backdrop_path && Movies[19].backdrop_path}`} title={Movies[19].original_title} description={Movies[19].overview} movieId={Movies[19].movieId} />
+                <MainImage image={`${IMAGE_URL}w1280${Movies[19].backdrop_path && Movies[19].backdrop_path}`} title={Movies[19].original_title} description={Movies[19].overview} movieId={Movies[19].id} />
             }
             {/*Needed to do the above so that we can get the value of movies[value] first. Not doing so will show an undefined error because the speed
             of getting the value is much slower than the rendering of the JSX elements, thus, we do this so that it can get the value. */}
