@@ -20,7 +20,7 @@ function FavoritePage() {
                     setFavoritedMovies(response.data.favorites);
                     console.log(response.data.favorites);
                 } else {
-                    alert("DB Error: Failed to get favorited movies.");
+                    alert("Error: Failed to get favorited movies. Please log in first.");
                 }
             })
     }

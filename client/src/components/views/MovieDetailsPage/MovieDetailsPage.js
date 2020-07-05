@@ -6,6 +6,7 @@ import { Descriptions, Button, Row } from 'antd';
 import './MovieDetailsPage.css';
 import GridCard from '../LandingPage/Sections/GridCard';
 import Favorites from './Sections/Favorite';
+import Comments from './Sections/Comments';
 
 function MovieDetailsPage(props) {
 
@@ -13,6 +14,10 @@ function MovieDetailsPage(props) {
     const [Movie, setMovie] = useState([]);
     const [Crews, setCrews] = useState([]);
     const [ActorToggle, setActorToggle] = useState(false);
+    const [CommentLists, setCommentLists] = useState([]);
+    const movieVariable = {
+        movieId: movieId
+    }
 
     useEffect(() => {
         
@@ -34,12 +39,26 @@ function MovieDetailsPage(props) {
             .catch((error) => {
                 console.log(error);
             })
+
+            axios.post('/api/comment/getComments', movieVariable)
+            .then(response => {
+                console.log(response)
+                if (response.data.success) {
+                    console.log('response.data.comments', response.data.comments)
+                    setCommentLists(response.data.comments)
+                } else {
+                    alert('Failed to get comments Info')
+                }
+            })
     }, [])
 
     const toggleActors = () => {
         setActorToggle(!ActorToggle);
     }
 
+    const updateComment = (newComment) => {
+        setCommentLists(CommentLists.concat(newComment))
+    }
 
     return (
         <div style={{ width: '100%', margin: 0 }}>
@@ -94,6 +113,10 @@ function MovieDetailsPage(props) {
 
                 </Row>
             }
+
+
+            {/*Comments*/}
+            <Comments movieTitle={Movie.original_title} CommentLists={CommentLists} postId={movieId} refreshFunction={updateComment} />
 
 
 

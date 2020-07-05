@@ -18,6 +18,10 @@ function Favorite(props) {
     }
 
     const clickFavorite = () => {
+        if (user.userData && !user.userData.isAuth) {
+            return alert('Please Log in first');
+        }
+
         if (Favorited) {
             //when already added
             axios.post('/api/favorite/removeFromFavorite', variable)
@@ -55,7 +59,7 @@ function Favorite(props) {
                     console.log("yeehaw1 aaa" + response.data.FavoriteNumber);
                     setFavoriteNumber(response.data.FavoriteNumber);
                 } else {
-                    alert('Failed to get the number of favorites');
+                    alert('Failed to get the number of favorites. Please log in first.');
                 }
             })
 
@@ -65,7 +69,7 @@ function Favorite(props) {
                     console.log("yeehaw2");
                     setFavorited(response.data.favorited);
                 } else {
-                    alert("Failed to get information of favorites");
+                    alert("Failed to get information of favorites. Please log in first.");
                 }
             })
 
