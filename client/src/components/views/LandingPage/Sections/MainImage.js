@@ -14,6 +14,9 @@ function MainImage(props) {
             width: '100%',
             position: 'relative'
         }}>
+             <a href={`/movie/${props.movieId}`}>
+
+                        </a>
 
             {/*background: 'linear-gradient(to bottom right, rgba(0,0,0,0) 
                 40%, rgba(0,0,0,0) 
