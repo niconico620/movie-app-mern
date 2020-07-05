@@ -10,7 +10,7 @@ function GridCard(props) {
                     <div style={{ position: 'relative' }}>
                        
                             <img alt="img" src={props.image} />
-                        
+                        <p style={{color: 'white', textAlign: 'center'}}>{props.name}</p>
                     </div>
                 </Col>
             </div>

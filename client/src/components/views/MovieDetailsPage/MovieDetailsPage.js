@@ -66,7 +66,7 @@ function MovieDetailsPage(props) {
                     <Descriptions.Item label="Release Date"><span style={{ color: 'white' }}>{Movie.release_date}</span></Descriptions.Item>
                     <Descriptions.Item label="Revenue"><span style={{ color: 'white' }}>${Movie.revenue}</span></Descriptions.Item>
                     <Descriptions.Item label="Runtime"><span style={{ color: 'white' }}>{Movie.runtime} minutes</span></Descriptions.Item>
-                    <Descriptions.Item label="Votes (Average)" span={2}><span style={{ color: 'white' }}>{Movie.vote_average}</span></Descriptions.Item>
+                    <Descriptions.Item label="Average Rating" span={2}><span style={{ color: 'white' }}>{Movie.vote_average}</span></Descriptions.Item>
                     <Descriptions.Item label="Vote Count"><span style={{ color: 'white' }}>{Movie.vote_count}</span></Descriptions.Item>
                     <Descriptions.Item label="Status"><span style={{ color: 'white' }}>{Movie.status}</span></Descriptions.Item>
                     <Descriptions.Item label="Popularity"><span style={{ color: 'white' }}>{Movie.popularity}</span></Descriptions.Item>
@@ -75,7 +75,7 @@ function MovieDetailsPage(props) {
             <br />
 
             <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <Button type="primary" onClick={toggleActors}>View Actors</Button>
+                <Button type="primary" onClick={toggleActors}>{!ActorToggle ? "View Actors" : "Hide Actors"}</Button>
             </div>
             <br />
 
@@ -86,7 +86,7 @@ function MovieDetailsPage(props) {
                         return (
                             <React.Fragment key={index}>
                                 {crew.profile_path &&
-                                    <GridCard actor image={`${IMAGE_URL}w500${crew.profile_path}`}
+                                    <GridCard actor image={`${IMAGE_URL}w500${crew.profile_path}`} name={crew.name}
                                     />}
                             </React.Fragment>
                         )

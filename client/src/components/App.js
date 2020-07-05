@@ -8,7 +8,7 @@ import RegisterPage from "./views/RegisterPage/RegisterPage.js";
 import NavBar from "./views/NavBar/NavBar";
 import Footer from "./views/Footer/Footer"
 import MovieDetailsPage from './views/MovieDetailsPage/MovieDetailsPage';
-
+import FavoritePage from './views/FavoritePage/FavoritePage';
 //null   Anyone Can go inside
 //true   only logged in user can go inside
 //false  logged in user can't go inside
@@ -23,6 +23,7 @@ function App() {
           <Route exact path="/login" component={Auth(LoginPage, false)} />
           <Route exact path="/register" component={Auth(RegisterPage, false)} />
           <Route exact path="/movie/:movieId" component={Auth(MovieDetailsPage, null)} />
+          <Route exact path="/favorite" component={Auth(FavoritePage, null)} />
         </Switch>
       </div>
       <Footer />
